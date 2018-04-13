@@ -6,7 +6,7 @@ Broadcasting to Livepeer using existing broadcasting tools is
 easy. After a Livepeer node is running, it exposes an RTMP interface
 on port 1935. You can broadcast into Livepeer using this port.
 
-# Download Livepeer Software 
+# Download and Run Livepeer Software 
 The following instructions assume that you have followed the
 [installation instructions] (http://livepeer.readthedocs.io/en/latest/node.html#installation)
 
@@ -14,55 +14,7 @@ and [have the node running](node.html).
 
 Note: make sure you have deposited tokens if you are running in onchain mode.
 
-## Broadcast Using livepeer_cli
-
-Start livepeer_cli
-
-```
-./livepeer_cli
-```
-
-It will read data from the currently running node, and display a list
-of options. Choose the option to `Broadcast Video`, number 15:
-
-```
-What would you like to do? (default = stats)
- 1. Get node status
- 2. View protocol parameters
- 3. Initialize round
- 4. Bond
- 5. Unbond
- 6. Withdraw stake (LPT)
- 7. Withdraw fees (ETH)
- 8. Claim rewards and fees
- 9. Transfer LPT
- 10. Get test LPT
- 11. Get test ETH
- 12. List registered transcoders
- 13. Deposit (ETH)
- 14. Withdraw deposit (ETH)
- 15. Broadcast video
- 16. Stream video
- 17. Set broadcast config
-> 15
-
-Current RTMP setting: http://localhost:1935/streams
-Current HTTP setting: http://localhost:8935/streams
-Keep it? (Y/n) > Y
-New rtmp port? (default 1935)> 
-New http port? (default 8935)> 
-New RTMP setting: http://localhost:1935/streams
-New HTTP setting: http://localhost:8935/streams
-Now broadcasting - 
-ManifestID: 12204673fd38ca1c13201ae714ac10758275bf2ae34d8ed004f36c04fa0ec0228f36138528423d33b8b27e1d3c4e5026b7fe9c05833346495130ce276015a86fbf95
-Type `q` to stop broadcasting
-```
-
-You are now broadcasting into Livepeer, and anyone else on your
-Livepeer network can request the video using the ManifestID that is
-printed out. #Isn't this ETH address?
-
-## Playing the Stream
+## Play the Stream
 
 You can request your stream in a number of ways.
 
@@ -156,3 +108,6 @@ through Livepeer will pull the video from the network, but will be
 served off of a CDN. In the future, we would like to replace this
 option with the p2p network that Livepeer forms around a stream.
 
+## Common Errors
+
+For Common errors that come up while attempting to broadcast, check out our [common errors] post on Forum 
