@@ -1,11 +1,16 @@
 # Broadcasting on Livepeer
 
+Start by Reading [How to Set Up a Broadcasting Node ] (https://github.com/livepeer/wiki/wiki/How-to:-set-up-a-broadcasting-node-using-Livepeer-and-OBS)
+
 Broadcasting to Livepeer using existing broadcasting tools is
 easy. After a Livepeer node is running, it exposes an RTMP interface
 on port 1935. You can broadcast into Livepeer using this port.
 
+# Download Livepeer Software 
 The following instructions assume that you have followed the
-installation instructions and [have the node running](node.html).
+[installation instructions] (http://livepeer.readthedocs.io/en/latest/node.html#installation)
+
+and [have the node running](node.html).
 
 Note: make sure you have deposited tokens if you are running in onchain mode.
 
@@ -14,28 +19,32 @@ Note: make sure you have deposited tokens if you are running in onchain mode.
 Start livepeer_cli
 
 ```
-$ livepeer_cli
+./livepeer_cli
 ```
 
 It will read data from the currently running node, and display a list
-of options. Choose the option to `Broadcast Video`:
+of options. Choose the option to `Broadcast Video`, number 15:
 
 ```
 What would you like to do? (default = stats)
  1. Get node status
- 2. Deposit token
- 3. Broadcast video
- 4. Stream video
- 5. Set transcoder config
- 6. Set broadcast config
- 7. Bond
- 8. Unbond
- 9. Withdraw bond
- 10. Become a transcoder
- 11. Get test Livepeer Token
- 12. Get test Ether
- 13. List registered transcoders
-> 3
+ 2. View protocol parameters
+ 3. Initialize round
+ 4. Bond
+ 5. Unbond
+ 6. Withdraw stake (LPT)
+ 7. Withdraw fees (ETH)
+ 8. Claim rewards and fees
+ 9. Transfer LPT
+ 10. Get test LPT
+ 11. Get test ETH
+ 12. List registered transcoders
+ 13. Deposit (ETH)
+ 14. Withdraw deposit (ETH)
+ 15. Broadcast video
+ 16. Stream video
+ 17. Set broadcast config
+> 15
 
 Current RTMP setting: http://localhost:1935/streams
 Current HTTP setting: http://localhost:8935/streams
@@ -51,7 +60,7 @@ Type `q` to stop broadcasting
 
 You are now broadcasting into Livepeer, and anyone else on your
 Livepeer network can request the video using the ManifestID that is
-printed out.
+printed out. #Isn't this ETH address?
 
 ## Playing the Stream
 
@@ -72,10 +81,14 @@ When you're finished broadcasting you can type `q` to stop the stream.
 It is far more convenient to broadcast using existing tools that have
 features for screen capture, composites, overlays, multiple video and
 audio sources, etc. One such tool is
-[OBS](https://obsproject.com/). To use OBS you have to change one
+[OBS](https://obsproject.com/), which is what the Livepeer team often uses for livestreams
+
+Start by reading our guide to [OBS and Livepeer] (https://github.com/livepeer/wiki/wiki/How-to:-set-up-a-broadcasting-node-using-Livepeer-and-OBS#download-and-install-obs)
+
+To use OBS you have to change one
 setting:
 
-* Settings -> Stream -> URL. Set it as `rtmp://localhost:1935/movie`
+* Settings -> Stream -> URL. Set it as `rtmp://localhost:1935/
 * Start streaming as usual.
 
 The tricky part is that OBS is not aware of the Livepeer Manifest
